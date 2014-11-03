@@ -142,7 +142,7 @@ gulp.task('lib', function() {
           console.log(err.message);
           this.end();
         })
-      .pipe(source('poly-form-json-resource-lib.min.js'))
+      .pipe(source('poly-form-json-resource-vendor.min.js'))
       .pipe(duration('vendor'))
       .pipe(buffer())
       .pipe(gulpif(env === PRODUCTION, uglify()))
