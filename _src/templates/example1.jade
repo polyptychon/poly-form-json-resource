@@ -1,0 +1,11 @@
+doctype html
+html(ng-app="poly-form-json-resource")
+  head
+    include partials/header
+  body
+    .container
+
+      - formName = 'ComponentsForm'
+      form(name=formName, ng-cloak="true")
+
+    include partials/footer
