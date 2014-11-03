@@ -61,3 +61,15 @@ angular.module('myApp', ['poly-form-json-resource']);
 ```html
 <json-resource path="people.json" variable="people3Async"></json-resource>
 ```
+
+```html
+<json-resource
+  path="http://www.weighttraining.com/api/v2/sm/search?types%5B%5D=:type&amp;term=:term&amp;limit=:limit"
+  map-data="{type: 'exercise', limit: -1, term: $select.search}"
+  query-data-type="jsonp"
+  query-results-array-path="results.exercise"
+  variable="people4Async"
+  query-data-filter="{{ myForm.peopleDynamic.selected }}"
+  update-on-expression-change="{{ $select.search }}">
+</json-resource>
+```
