@@ -21,7 +21,7 @@ npm install --save polyptychon/poly-form-json-resource
 Add a `<script>` to your `index.html`:
 
 ```html
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
 
 <script src="/node_modules/poly-form-json-resource/_lib/poly-form-json-resource.min.js"></script>
@@ -44,7 +44,7 @@ bower install polyptychon/poly-form-json-resource
 Add a `<script>` to your `index.html`:
 
 ```html
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
 
 <script src="/bower_components/poly-form-json-resource/_lib/poly-form-json-resource.min.js"></script>
