@@ -24,7 +24,7 @@ Add a `<script>` to your `index.html`:
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
 
-<script src="/node_modules/poly-form-json-resource/_lib/js/poly-form-json-resource.min.js"></script>
+<script src="/node_modules/poly-form-json-resource/lib/js/poly-form-json-resource.min.js"></script>
 ```
 
 Then add `poly-form-json-resource` as a dependency for your app:
@@ -47,7 +47,7 @@ Add a `<script>` to your `index.html`:
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
 
-<script src="/bower_components/poly-form-json-resource/_lib/js/poly-form-json-resource.min.js"></script>
+<script src="/bower_components/poly-form-json-resource/lib/js/poly-form-json-resource.min.js"></script>
 ```
 
 Then add `poly-form-json-resource` as a dependency for your app:

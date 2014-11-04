@@ -132,7 +132,7 @@ gulp.task('lib', function() {
     .pipe(plumber({
       errorHandler: handleError
     }))
-    .pipe(myCoffee('_lib/js', 'poly-form-json-resource.min.js'));
+    .pipe(myCoffee('lib/js', 'poly-form-json-resource.min.js'));
 
   gulp.src(dependencies)
     return browserify()
@@ -147,7 +147,7 @@ gulp.task('lib', function() {
       .pipe(buffer())
       .pipe(gulpif(env === PRODUCTION, uglify()))
       .pipe(gulpif(env === PRODUCTION, size()))
-      .pipe(gulp.dest('_lib/js'));
+      .pipe(gulp.dest('lib/js'));
 });
 
 gulp.task('clean-js', function() {
