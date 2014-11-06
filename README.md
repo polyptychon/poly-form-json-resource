@@ -58,6 +58,26 @@ angular.module('myApp', ['poly-form-json-resource']);
 
 ## Documentation
 
+Load a JSON object in a scope variable.
+
+##### Attributes
+
+| Name                                    | Type        | Default   | Description |
+| :-------------------------------------  | :---        | :-----    | :-----      |
+| variable                                | String      | null      | Variable name. |
+| path                                    | String      | null      | Path to remote JSON. |
+| map-data                                | Object      | null      | Mapping data from an object to url(path). See example bellow |
+| data-type                               | String      | 'json'    | JSON or JSONP |
+| update-on-expression-change             | Expression  | null      | Watch an expression and load JSON when expression changes |
+| quiet-millis                            | Number      | 500       | How much time after expression change to trigger validation |
+| minimum-input-length                    | Number      | 3         | Minimum watch expression value length to trigger reload |
+| maximum-input-length                    | Number      | null      | Maximum watch expression value length to trigger reload |
+| results-array-path                      | String      | ''        | Path to an array inside JSON |
+| data-filter                             | Expression  | null      | Watch an array and filter data with array values only if we had an attribute with array path |
+
+
+##### Example
+
 ```html
 <json-resource path="people.json" variable="people3Async"></json-resource>
 ```
@@ -69,7 +89,7 @@ angular.module('myApp', ['poly-form-json-resource']);
   query-data-type="jsonp"
   query-results-array-path="results.exercise"
   variable="people4Async"
-  query-data-filter="{{ myForm.peopleDynamic.selected }}"
+  data-filter="{{ myForm.peopleDynamic.selected }}"
   update-on-expression-change="{{ $select.search }}">
 </json-resource>
 ```
