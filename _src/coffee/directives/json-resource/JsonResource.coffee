@@ -8,16 +8,16 @@ module.exports = ($timeout, $http) ->
 #    variable: '@'
 #    quietMillis: '@'
 #    mapData: '@'
-#    queryDataType: '@'
+#    dataType: '@'
 #    updateOnExpressionChange: '@'
   link: (scope, elm, attrs) ->
     timeoutPromise = null
     minimumInputLength = if (attrs.minimumInputLength? && !isNaN(attrs.minimumInputLength)) then attrs.minimumInputLength else 3
     maximumInputLength = if (attrs.maximumInputLength? && !isNaN(attrs.maximumInputLength)) then attrs.maximumInputLength else null
     quietMillis = if (attrs.quietMillis? && !isNaN(attrs.quietMillis)) then attrs.quietMillis else 500
-    queryDataFilter = null
-    attrs.$observe("queryDataFilter", (newValue, oldValue) ->
-      queryDataFilter = newValue
+    dataFilter = null
+    attrs.$observe("dataFilter", (newValue, oldValue) ->
+      dataFilter = newValue
     )
     attrs.$observe("updateOnExpressionChange", (newValue, oldValue) ->
       return unless (newValue? && newValue != oldValue)
@@ -42,15 +42,15 @@ module.exports = ($timeout, $http) ->
     onSuccess = (response) ->
       elm.parent().removeClass("ng-loading")
       if attrs.variable?
-        if attrs.queryResultsArrayPath?
-          paths = attrs.queryResultsArrayPath.split(".")
+        if attrs.resultsArrayPath?
+          paths = attrs.resultsArrayPath.split(".")
           a = response
           _.forEach(paths, (path) ->
             a = a[path]
           )
-          if queryDataFilter?
+          if dataFilter?
             a = _.remove(a, (item)->
-              return !contains(item, queryDataFilter)
+              return !contains(item, dataFilter)
             )
           scope[attrs.variable] = a
         else
@@ -69,7 +69,7 @@ module.exports = ($timeout, $http) ->
         elm.parent().removeClass("ng-loading");
         return
       elm.parent().addClass("ng-loading");
-      dataType = attrs.queryDataType || "json"
+      dataType = attrs.dataType || "json"
 
       if (dataType == "jsonp")
         if (url.indexOf("?") < 0)
